@@ -6,13 +6,18 @@ import { lusitana } from "@/app/ui/fonts"
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons"
 import { Suspense } from "react"
 import { fetchInvoicesPages } from "@/app/lib/data"
+import { Metadata } from "next"
 
 type SearchParams = {
   query?: string
   page?: string
 }
 interface Props {
-  searchParams?: Promise<SearchParams>
+  searchParams: Promise<SearchParams>
+}
+
+export const metadata: Metadata = {
+  title: "Invoices",
 }
 
 export default async function Page(props: Props) {
